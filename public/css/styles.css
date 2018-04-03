@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+form {
+    text-align: center;
+}
+
+input[type=submit], input[type=radio], input[type=text], input[type=button], select {
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+p.MessageBox {
+    text-align: center;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 60px 5px 60px
+}
+
+p.Correct {
+    background-color: #82E0AA;
+    color: #145A32;
+
+}
+
+p.Incorrect {
+    color: darkred;
+    background-color: #F1948A;
+}
