@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-require 'Classes/Data.php';
-
-use Illuminate\Http\Request;
-use Custom\Data as Data;
-
 class PageController extends Controller
 {
     public function index()
     {
-        $data = new Data();
-        $dispString = null;
-        return view('forms.form')->with(['data' => $data, 'dispString' => $dispString]);
-    }
+        $firstNum = old('firstNum', rand((int)10 ** (1 - 1), ((int)10 ** 1) - 1));
+        $secondNum = old('secondNum', rand((int)10 ** (1 - 1), ((int)10 ** 1) - 1));
+        $correctAnswer = old('correctAnswer',$firstNum + $secondNum);
+        $displayString = old('displayString', (string)$firstNum . ' + ' . (string)$secondNum);
+        $operation = old('operation', 'Add');
+        $firstNumDig = old('firstNumDig', 1);
+        $secondNumDig = old('secondNumDig', 1);
 
-    //public function submission(Request $request)
-    //{
-    //    dump($request->all());
-    //}
+
+        return view('forms.form')->with([
+            'firstNum' => $firstNum,
+            'secondNum' => $secondNum,
+            'correctAnswer' => $correctAnswer,
+            'displayString' => $displayString,
+            'operation' => $operation,
+            'firstNumDig' => $firstNumDig,
+            'secondNumDig' => $secondNumDig
+            ]);
+    }
 }
