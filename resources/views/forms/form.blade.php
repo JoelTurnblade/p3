@@ -30,7 +30,7 @@
         <input type='hidden' name='firstNum' value='{{ $firstNum or old('firstNum', '') }}'>
         <input type='hidden' name='secondNum' value='{{ $secondNum or old('secondNum', '') }}'>
         <input type='hidden' name='correctAnswer' value='{{ $correctAnswer or old('correctAnswer', '') }}'>
-        <input type='text' name='userAnswer' value=@if($errors->any()) '{{ old('userAnswer', '') }}' @else {{ '' }} @endif>
+        <input type='text' name='userAnswer' value=@if($errors->any()) {{ old('userAnswer', '') }} @else {{ '' }} @endif>
         <br>
         <input type='submit' value='check answer / generate'>
     </form>
